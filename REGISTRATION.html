@@ -1,55 +1,174 @@
 <!DOCTYPE html>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CÁC THƯ VIỆN CẦN THIẾT -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- ICON TRANG WEB -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- THIẾT KẾ GIAO DIỆN -->
+  <style>
+    .header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .header img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .header .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Add custom styles here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+      /* Smooth transition for background color */
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    header,
+    main,
+    footer {
+      padding: 20px;
+      background-color: #f0f0f0;
+      opacity: 0;
+      /* Initially set opacity to 0 for fade-in effect */
+      animation: fadeIn 1s forwards;
+      /* Fade-in animation */
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.8em;
+    }
+
+    /* Keyframes for fade-in animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <title>GEOScire REGISTER</title>
+</head>
+
 <body>
-<!--
-<div class="w3-container w3-blue">
-  <h2>Input Form</h2>
-</div>
 
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSexeK6z1opFFolHGgWO1l6ML4SKrhkPwKHKNx_ZZNhrhCPULw/formResponse" class="w3-container">
-  <p>
-  <label>Name</label>
-  <input class="w3-input" name="YPqjbf" type="text"></p>
-  <p>
-  <label>Email</label>
-  <input class="w3-input" name="YPqjbf" type="text"></p>
-  <p>
-  <label>Institution</label>
-  <input class="w3-input" name="YPqjbf" type="text"></p>
-  <p>
-  <label>Position (e.g., Engineer, Student, Lecturer, Professor)</label>
-  <input class="w3-input" name="LwH6nd" type="text"></p>
-  <p>
-  <label>Participation mode</label>
-  <input class="w3-input" type="radio">In-person<br/>
-  <input class="w3-input" type="radio">Virtually via Microsoft Teams (Teams link will be provided later via email)<br/>
-  
-  </p>
-  <p>
-  <label>Any remarks or questions you want to make</label>
-  <textarea class="w3-input" name="gZjhIf"></textarea></p>
-  <p>
-  <button class="w3-btn w3-blue">Register</button>
-  </p>
-  
-</form>
--->
-viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>viết nội dung text <br/>
-
-
-<div class="w3-row">
-  <div class="w3-green w3-container w3-third">
-    <img src="5.8_ava.webp" style="width:100%;" />
+  <!-- Banner -->
+  <div class="header">
+    <img src="./banner1.jpeg" alt="Header Image">
+    <div class="header-text">
+      <h1>GEOScire Project</h1>
+      <p>Thêm chữ j ở đây</p>
+    </div>
   </div>
-  <div class="w3-container w3-twothird">
-    <iframe style="width:100%; height:1000px;" src="https://docs.google.com/forms/d/e/1FAIpQLSexeK6z1opFFolHGgWO1l6ML4SKrhkPwKHKNx_ZZNhrhCPULw/viewform?fbzx=-3340001940097154494"></iframe>
+
+  <!-- GIỚI THIỆU -->
+  <div class="container">
+    <h2>Giới thiệu hội thảo</h2>
+    <p class="responsive-paragraph">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit ea cum quis debitis ad. Aperiam tempore quasi non
+      tempora voluptatum harum neque facilis itaque qui assumenda. Sed sunt adipisci nulla!
+    </p>
   </div>
-</div>
 
+  <!-- Sự kiện -->
+  <div class="container">
+    <div class="row">
+      <!-- Thông tin -->
+      <div class="col-md-6">
+        <h2>Chương trình hội thảo</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Giờ Việt Nam ( chiều )</th>
+                <th>Giờ Anh ( sáng )</th>
+                <th>Hoạt động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+              </tr>
+              <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+              </tr>
+              <tr>
+                <td>Row 3, Cell 1</td>
+                <td>Row 3, Cell 2</td>
+                <td>Row 3, Cell 3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
+      <!-- Bản đồ -->
+      <div class="col-md-6">
+        <h2>Vị trí: HUCE</h2>
+        <div style="width: 100%; height: 0; padding-bottom: 100%; position: relative;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22490.376646393343!2d-122.41941502896503!3d37.77492949647538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858734a22645df%3A0x65f412647f3751cc!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1630059931127!5m2!1sen!2sca"
+            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM GOOGLE -->
+  <div class="container">
+    <h2>Đăng kí</h2>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSexeK6z1opFFolHGgWO1l6ML4SKrhkPwKHKNx_ZZNhrhCPULw/viewform?fbzx=-3340001940097154494"
+      width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="fluid-container">
+    <p>Phần Footer.</p>
+  </footer>
+
+  <script>
+    // JavaScript to trigger background color change on scroll
+    document.addEventListener("scroll", function () {
+      var scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        document.body.style.backgroundColor = "#e6e6e6"; // Change to desired background color
+      } else {
+        document.body.style.backgroundColor = "#f0f0f0"; // Reset to original color
+      }
+    });
+  </script>
+
+  <!-- CÁC THƯ VIỆN JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
-</html> 
+
+</html>
