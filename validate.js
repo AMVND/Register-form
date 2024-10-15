@@ -1,132 +1,72 @@
-function formValidation() {
-    var uid = document.registration.userid;
-    var passid = document.registration.passid;
-    var uname = document.registration.username;
-    var uadd = document.registration.address;
-    var ucountry = document.registration.country;
-    var uzip = document.registration.zip;
-    var uemail = document.registration.email;
-    var umsex = document.registration.msex;
-    var ufsex = document.registration.fsex; if (userid_validation(uid, 5, 12)) {
-        if (passid_validation(passid, 7, 12)) {
-            if (allLetter(uname)) {
-                if (alphanumeric(uadd)) {
-                    if (countryselect(ucountry)) {
-                        if (allnumeric(uzip)) {
-                            if (ValidateEmail(uemail)) {
-                                if (validsex(umsex, ufsex)) {
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return false;
-}
+function validateForm() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const subject = document.getElementById("subject").value;
+    const agree = document.getElementById("agree").checked;
+    const nameError = document.getElementById("name-error");
+    
+    const addressError = document.getElementById(
+        "address-error"
+    );
+    const emailError = document.getElementById(
+        "email-error"
+    );
+    const passwordError = document.getElementById(
+        "password-error"
+    );
+    const subjectError = document.getElementById(
+        "subject-error"
+    );
+    const agreeError = document.getElementById(
+        "agree-error"
+    );
 
-//UserID
-function userid_validation(uid, mx, my) {
-    var uid_len = uid.value.length;
-    if (uid_len == 0 || uid_len >= my || uid_len < mx) {
-        alert("User Id should not be empty / length be between " + mx + " to " + my);
-        uid.focus();
-        return false;
-    }
-    return true;
-}
+    nameError.textContent = "";
+    addressError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    subjectError.textContent = "";
+    agreeError.textContent = "";
 
-//PassID
-function passid_validation(passid, mx, my) {
-    var passid_len = passid.value.length;
-    if (passid_len == 0 || passid_len >= my || passid_len < mx) {
-        alert("Password should not be empty / length be between " + mx + " to " + my);
-        passid.focus();
-        return false;
-    }
-    return true;
-}
+    let isValid = true;
 
-//Letter
-function allLetter(uname) {
-    var letters = /^[A-Za-z]+$/;
-    if (uname.value.match(letters)) {
-        return true;
+    if (name === "" || /\d/.test(name)) {
+        nameError.textContent =
+            "Please enter your name properly.";
+        isValid = false;
     }
-    else {
-        alert('Username must have alphabet characters only');
-        uname.focus();
-        return false;
-    }
-}
-function alphanumeric(uadd) {
-    var letters = /^[0-9a-zA-Z]+$/;
-    if (uadd.value.match(letters)) {
-        return true;
-    }
-    else {
-        alert('User address must have alphanumeric characters only');
-        uadd.focus();
-        return false;
-    }
-}
 
-//Country
-function countryselect(ucountry) {
-    if (ucountry.value == "Default") {
-        alert('Select your country from the list');
-        ucountry.focus();
-        return false;
+    if (address === "") {
+        addressError.textContent =
+            "Please enter your address.";
+        isValid = false;
     }
-    else {
-        return true;
-    }
-}
 
-//Numeric
-function allnumeric(uzip) {
-    var numbers = /^[0-9]+$/;
-    if (uzip.value.match(numbers)) {
-        return true;
+    if (email === "" || !email.includes("@")) {
+        emailError.textContent =
+            "Please enter a valid email address.";
+        isValid = false;
     }
-    else {
-        alert('ZIP code must have numeric characters only');
-        uzip.focus();
-        return false;
-    }
-}
 
-//Email
-function ValidateEmail(uemail) {
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (uemail.value.match(mailformat)) {
-        return true;
+    if (password === "" || password.length < 6) {
+        passwordError.textContent =
+            "Please enter a password with at least 6 characters.";
+        isValid = false;
     }
-    else {
-        alert("You have entered an invalid email address!");
-        uemail.focus();
-        return false;
-    }
-}
 
-//Gender
-function validsex(umsex, ufsex) {
-    x = 0;
+    if (subject === "") {
+        subjectError.textContent =
+            "Please select your course.";
+        isValid = false;
+    }
 
-    if (umsex.checked) {
-        x++;
-    } if (ufsex.checked) {
-        x++;
+    if (!agree) {
+        agreeError.textContent =
+            "Please agree to the above information.";
+        isValid = false;
     }
-    if (x == 0) {
-        alert('Select Male/Female');
-        umsex.focus();
-        return false;
-    }
-    else {
-        alert('Form Succesfully Submitted');
-        window.location.reload()
-        return true;
-    }
+
+    return isValid;
 }
